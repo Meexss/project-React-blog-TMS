@@ -1,0 +1,30 @@
+.search {
+    width: 100%;
+    background-color: #5360CD;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.not_active {
+    display: none;
+}
+
+.input_style {
+    width: 95%;
+    background-color: #5360CD;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.btn_close {
+    color: white;
+    background-color: transparent;
+    border: none;
+    width: 5%;
+}

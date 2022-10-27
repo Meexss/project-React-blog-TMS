@@ -1,0 +1,25 @@
+.burger__module {
+    display: block;
+    background-color: white;
+    width: 236px;
+    height: 960px;
+    position: absolute;
+    top: 84px;
+    left: 0;
+    animation: animate 2s linear;
+    border: 1px solid #E5E5E5;
+}
+
+.close__module {
+    composes: burger__module;
+    display: none;
+}
+
+@keyframes animate {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

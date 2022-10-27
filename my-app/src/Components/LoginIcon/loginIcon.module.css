@@ -1,0 +1,33 @@
+.login__wrapper {
+    background-color: #2231AA;
+    width: 230px;
+    height: 84px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.login__icon {
+    width: 48px;
+    height: 48px;
+    background-color: #5360CD;
+    color: white;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 34px;
+    text-align: center;
+    padding-top: 7px;
+}
+
+.login__name{
+    width: 120px;
+    height: 48px;
+    text-align: center;
+    color: white;
+    padding-top: 7px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 34px;
+}

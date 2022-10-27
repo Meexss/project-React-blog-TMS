@@ -1,0 +1,92 @@
+.wrapper {
+    width: 776px;
+    height: 450px;
+    margin-right: 32px;
+    display: flex;
+    border-bottom: 1px solid #DADADA;
+}
+
+.right_side {
+    margin-right: 32px;
+    width: 448px;
+}
+
+.date {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #8D8E97;
+    margin-bottom: 8px;
+}
+
+.title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 44px;
+    color: #313037;
+    width: 448px;
+    height: 132px;
+    margin-bottom: 24px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.text {
+    width: 448px;
+    height: 168px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #8D8E97;
+    overflow: hidden;
+}
+
+.photo {
+    width: 256px;
+    height: 244px;
+    object-fit: fill;
+}
+
+.like {
+    margin-right: 8px;
+}
+
+.colLike {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: end;
+    color: #313037;
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+}
+
+.dislike {
+    margin-left: 25px;
+}
+
+.lowBlock {
+    margin-top: 143px;
+    float: right;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.more {
+    margin-left: 30px;
+    align-items: center;
+}
+
+.like_block {
+    margin-top: 33px;
+    margin-bottom: 40px;
+}
+
+

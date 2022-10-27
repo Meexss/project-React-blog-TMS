@@ -1,0 +1,11 @@
+.search__wrapper {
+    width: 85px;
+    height: 85px;
+    border-right: 1px solid #5360CD;
+    border-left: 1px solid #5360CD;
+    align-items: center;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}

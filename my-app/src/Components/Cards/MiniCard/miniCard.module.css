@@ -1,0 +1,71 @@
+.wrapper {
+    width: 352px;
+    height: 205px;
+    border-bottom: 1px solid #DADADA;
+    display: flex;
+    justify-content: space-between;
+}
+
+.date {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #8D8E97;
+    margin-bottom: 8px;
+    height: 24px;
+}
+
+.title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #313037;
+    width: 100%;
+    height: 84px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.photo {
+    width: 96px;
+    height: 96px;
+    object-fit: fill;
+}
+
+.like_wrapper {
+    margin-top: 33px;
+}
+
+.like {
+    margin-right: 8px;
+}
+
+.colLike {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: end;
+    color: #313037;
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+}
+
+.dislike {
+    margin-left: 25px;
+}
+
+.more {
+    margin-top: 47px;
+    float: right;
+
+}
+
+.correct {
+    margin-left: 30px;
+}
+

@@ -1,0 +1,13 @@
+.wrapper {
+    background-color: #2231AA;
+    width: 100%;
+    height: 84px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 72px;
+}
+
+.right__wrapper {
+    display: flex;
+}
+
