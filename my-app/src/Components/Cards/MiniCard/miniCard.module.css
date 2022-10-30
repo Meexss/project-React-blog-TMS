@@ -4,6 +4,7 @@
     border-bottom: 1px solid #DADADA;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 40px;
 }
 
 .date {
@@ -22,17 +23,18 @@
     font-size: 18px;
     line-height: 28px;
     color: #313037;
-    width: 100%;
+    width: 222px;
     height: 84px;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-right: 34px;
 }
 
 
 .photo {
     width: 96px;
     height: 96px;
-    object-fit: fill;
+    object-fit: cover;
 }
 
 .like_wrapper {
@@ -68,4 +70,20 @@
 .correct {
     margin-left: 30px;
 }
+
+.favorite {
+    cursor: pointer;
+}
+
+.favorite:hover {
+    transform: scale(1.2);
+}
+
+.favorite:active {
+    transform: rotate(360deg);
+}
+.link {
+    text-decoration: none;
+}
+
 

@@ -1,0 +1,20 @@
+.wrapper {
+    display: flex;
+    margin-top: 64px;
+}
+
+.midleCard {
+    width: 352px;
+    margin-right: 32px;
+    margin-top: 40px;
+}
+
+.bigBlock {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.miniBlock {
+
+}
+

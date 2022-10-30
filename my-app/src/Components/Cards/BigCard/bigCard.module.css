@@ -1,5 +1,5 @@
 .wrapper {
-    width: 776px;
+    width: 736px;
     height: 450px;
     margin-right: 32px;
     display: flex;
@@ -49,7 +49,7 @@
 .photo {
     width: 256px;
     height: 244px;
-    object-fit: fill;
+    object-fit: cover;
 }
 
 .like {
@@ -89,4 +89,19 @@
     margin-bottom: 40px;
 }
 
+.favorite {
+    cursor: pointer;
+}
+
+.favorite:hover {
+    transform: scale(1.2);
+}
+
+.favorite:active {
+    transform: rotate(360deg);
+}
+
+.link {
+    text-decoration: none;
+}
 

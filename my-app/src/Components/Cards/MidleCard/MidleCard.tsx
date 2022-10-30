@@ -1,20 +1,22 @@
 import React, {FC} from 'react';
 import classes from './midleCars.module.css'
+import {Items} from "../../Tabs/FirstTab/TabContent";
+import {Link, Route} from "react-router-dom";
 
-interface props {
-    title: string;
-    img?: string;
-    text: string;
-    id: any
+interface ItemBig {
+    post: Items,
+    islike: (click: Items) => void
 }
 
 
-const MidleCard = () => {
+const MidleCard: FC<ItemBig> = (props) => {
     return (
         <div className={classes.wrapper}>
-            <img className={classes.photo} src="./Rectangle-39.jpg"/>
-            <span className={classes.date}>27.10.2022</span>
-            <h2 className={classes.title}>fdlkhdfg fjgsjdlg dfslfgds;ljg sdjdljf</h2>
+            <Link to={`/post/${props.post.id}`} className={classes.link}>
+            <img className={classes.photo} src={props.post.image}/>
+            <span className={classes.date}>{props.post.date}</span>
+            <h2 className={classes.title}>{props.post.title}</h2>
+            </Link>
             <div className={classes.wrapper_likes}>
                 <div >
                     <img className={classes.like} src="./Icon-Thumbs-Up.png"/>
@@ -23,10 +25,11 @@ const MidleCard = () => {
                     <span></span>
                 </div>
                 <div>
-                    <img src="./Bookmark.png"/>
+                    <img onClick={() => props.islike(props.post)} className={classes.favorite} src="./Bookmark.png"/>
                     <img className={classes.more} src='./More-Horizontal.png'/>
                 </div>
             </div>
+
         </div>
     );
 };

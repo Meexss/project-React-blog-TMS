@@ -1,0 +1,11 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 64px;
+}
+.midleCard {
+    width: 352px;
+    margin-right: 21px;
+    margin-top: 40px;
+}
