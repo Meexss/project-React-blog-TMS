@@ -11,3 +11,9 @@
     display: flex;
 }
 
+.link {
+    text-decoration: none;
+    cursor: pointer;
+
+}
+

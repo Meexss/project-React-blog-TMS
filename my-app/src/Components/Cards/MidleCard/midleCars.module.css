@@ -2,12 +2,13 @@
     margin-right: 32px;
     width: 352px;
     height: 450px;
+    border-bottom: 1px solid #DADADA;
 }
 
 .photo {
     width: 100%;
     height: 246px;
-    object-fit: fill;
+    object-fit: cover;
     margin-bottom: 24px;
     display: block;
 }
@@ -62,4 +63,20 @@
 
 .dislike {
     margin-left: 25px;
+}
+
+.favorite {
+    cursor: pointer;
+}
+
+.favorite:hover {
+    transform: scale(1.2);
+}
+
+.favorite:active {
+    transform: rotate(360deg);
+}
+
+.link {
+    text-decoration: none;
 }

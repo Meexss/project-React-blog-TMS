@@ -10,9 +10,14 @@
     width: 100px;
     height: 48px;
     margin-right: 25px;
+    cursor: pointer;
 }
 
 .tabLinks_active {
     composes: tabLinks;
     border-bottom: 1px solid black;
+}
+
+.tab {
+    width: 1120px;
 }

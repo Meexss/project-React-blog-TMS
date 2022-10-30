@@ -19,9 +19,9 @@ const Header = () => {
         <div className={classes.wrapper}>
                 <Burger>
                             <LoginIcon name={"Петр Первый"} />
-                            <Button onClick={e => console.log(e)}>Home</Button>
-                            <Button onClick={e => console.log(e)}>Add post</Button>
-                            <Button onClick={e => console.log(e)}>Log Out</Button>
+                            <a href='/' className={classes.link}><Button>Home</Button> </a>
+                             <a><Button >Add post</Button></a>
+                            <a> <Button >Log Out</Button></a>
                 </Burger>
                 <OpenSearch onClick={() => isClicked()}>{click}</OpenSearch>
                 <div className={classes.right__wrapper}>

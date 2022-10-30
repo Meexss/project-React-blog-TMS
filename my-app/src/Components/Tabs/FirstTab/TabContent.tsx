@@ -1,32 +1,57 @@
-import React, {FC} from 'react';
+import React, {FC, MouseEventHandler, useEffect, useState} from 'react';
 import BigCard from "../../Cards/BigCard/BigCard";
 import MidleCard from "../../Cards/MidleCard/MidleCard";
 import MiniCard from "../../Cards/MiniCard/MiniCard";
-import OpenCard from "../../Cards/OpenCard/OpenCard";
-import Footer from "../../Footer/Footer";
-import FirstBlock from "../../Cards/FirstBlock";
-import NextBlocks from "../../Cards/NextBlocks";
+import OpenCard from "../../../Pages/OpenCard";
+import classes from './atyleTab.module.css'
 
+export interface Items {
+    id: number,
+    date: string,
+    title: string,
+    lesson_num: number,
+    image: string,
+    author?: number,
+    text?: string,
+}
 
+interface Funct {
+    islike: (click: Items) => void,
+}
 
-const TabContent = () => {
-    const info = {
-        id: 1,
-        title: 'Astronauts prep for new solar arrays on nearly seven-hour spacewalk',
-        text: 'Astronauts Kayla Barron and Raja Chari floated out of the International Space Station airlock for a spacewalk Tuesday, installing brackets and struts to support new solar arrays to upgrade the research lab’s power system on the same day that crewmate Mark Vande Hei marked his 341st day in orbit, a U.S. record for a single spaceflight.',
-        img:"./Rectangle 42.png",
-    }
+const TabContent: FC<Funct> = (props) => {
+    const [content, setContent] = useState<Items[]>([]);
+    const [isLoading, setIsLoading] = useState<boolean>(false)
+
+    useEffect(() => {
+        fetch('https://studapi.teachmeskills.by/blog/posts/?limit=10')
+            .then(response => response.json())
+            .then(data => setContent(data.results))
+            .then(isDone => setIsLoading(true))
+    },[])
 
     return (
-            <div className="tabcontent">
-                <FirstBlock />
-                <NextBlocks />
-                <NextBlocks />
-                <NextBlocks />
-                <NextBlocks />
-                <OpenCard />
+
+        <div className={classes.wrapper}>
+            <div className={classes.bigBlock}>
+                {isLoading && <BigCard content={content} islike={props.islike}/>  }
+                {content.map((post, index) =>
+                    <div key={post.id} className={classes.midleCard}>
+                    {index < 4 ? <MidleCard key={post.id} post={post} islike={props.islike}/> : ''}
+                    </div>
+                )}
+            </div>
+            <div>
+                {content.map((post, index) =>
+                            <div key={post.id} className={classes.miniBlock}>
+                                {index >= 4 ? <MiniCard key={post.id} post={post} islike={props.islike}/> : ""}
+                            </div>
+                    )}
+            </div>
             </div>
         );
+
+
 };
 
 export default TabContent;

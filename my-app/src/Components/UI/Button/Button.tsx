@@ -3,13 +3,12 @@ import classes from './button.module.css'
 
 interface Props {
     children: React.ReactNode;
-    onClick: React.MouseEventHandler<HTMLElement>;
 }
 
 
-const Button:FC<Props> = ({children, ...props}) => {
+const Button:FC<Props> = ({children}) => {
     return (
-        <button {...props} className={classes.btn}>{children}</button>
+        <button className={classes.btn}>{children}</button>
     );
 };
 

@@ -1,20 +1,25 @@
-import React, {FC} from 'react';
+import React, {FC, MouseEventHandler} from 'react';
 import classes from './bigCard.module.css';
+import {Items} from "../../Tabs/FirstTab/TabContent";
+import {Link} from "react-router-dom";
 
-interface props {
-    title: string;
-    img?: string;
-    text: string;
-    id: any
+interface ItemBig {
+    content: Items[],
+    islike: (click: Items) => void
 }
 
-const BigCard = () => {
+
+const BigCard: FC<ItemBig> = (props) => {
+
+    console.log(props.content)
     return (
         <div className={classes.wrapper}>
             <div className={classes.right_side}>
-                <span className={classes.date}>27.10.2022</span>
-                <p className={classes.title}>офавшпрsdf ырвпоывлпывоплот  ызщшовпзыв зщпзщшы зщпыщвпщывзпыж длврплывтпывртплтывпызвтпылв  тцывтпзш ызщвопзщыв олпыозвшпыз</p>
-                <p className={classes.text}>kshfdgpnskdgskdgknsdkng spdkngpkasdng</p>
+                <Link to={`/post/${props.content[0].id}`} className={classes.link}>
+                <span className={classes.date}>{props.content[0].date}</span>
+                <p className={classes.title}>{props.content[0].title}</p>
+                <p className={classes.text}>{props.content[0].text}</p>
+                </Link>
                 <div className={classes.like_block}>
                     <img className={classes.like} src="./Icon-Thumbs-Up.png"/>
                     <span className={classes.colLike}>20</span>
@@ -23,9 +28,11 @@ const BigCard = () => {
                 </div>
             </div>
             <div>
-                <img className={classes.photo} src="./Rectangle-39.jpg"/>
+                <Link to={`/post/${props.content[0].id}`} className={classes.link}>
+                <img className={classes.photo} src={props.content[0].image}/>
+                </Link>
                 <div className={classes.lowBlock}>
-                    <img src="./Bookmark.png"/>
+                    <img onClick={() => props.islike(props.content[0])} className={classes.favorite} src="./Bookmark.png"/>
                     <img className={classes.more} src='./More-Horizontal.png'/>
                 </div>
 

@@ -1,19 +1,21 @@
-import React from 'react';
+import React, {FC} from 'react';
 import classes from "./miniCard.module.css";
+import {Items} from "../../Tabs/FirstTab/TabContent";
+import {Link} from "react-router-dom";
 
-interface props {
-    title: string;
-    img?: string;
-    text: string;
-    id: any;
+interface ItemBig {
+    post: Items,
+    islike: (click: Items) => void
 }
 
-const MiniCard = () => {
+const MiniCard: FC<ItemBig> = (props) => {
     return (
         <div className={classes.wrapper}>
             <div className={classes.side_wrapper}>
-                <span className={classes.date}>27.10.2022</span>
-                <h2 className={classes.title}>Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem </h2>
+                <Link to={`/post/${props.post.id}`} className={classes.link}>
+                <span className={classes.date}>{props.post.date}</span>
+                <h2 className={classes.title}>{props.post.title}</h2>
+                </Link>
                 <div className={classes.like_wrapper}>
                     <img className={classes.like} src="./Icon-Thumbs-Up.png"/>
                     <span className={classes.colLike}>20</span>
@@ -22,9 +24,11 @@ const MiniCard = () => {
                 </div>
             </div>
             <div>
-                <img className={classes.photo} src="./Rectangle-39.jpg"/>
+                <Link to={`/post/${props.post.id}`} className={classes.link}>
+                <img className={classes.photo} src={props.post.image}/>
+                </Link>
                 <div className={classes.more}>
-                    <img src="./Bookmark.png"/>
+                    <img onClick={() => props.islike(props.post)} className={classes.favorite} src="./Bookmark.png"/>
                     <img className={classes.correct} src='./More-Horizontal.png'/>
                 </div>
             </div>
