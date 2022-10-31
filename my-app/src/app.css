@@ -2,11 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #E5E5E5;
+}
+.App {
+
 }
 
 .wrapper {
     max-width: 1120px;
     margin: 0 auto;
+
 }
 
 .wrapper__slide {

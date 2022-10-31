@@ -1,6 +1,6 @@
 .search__wrapper {
     width: 85px;
-    height: 85px;
+    height: 84px;
     border-right: 1px solid #5360CD;
     border-left: 1px solid #5360CD;
     align-items: center;
@@ -8,4 +8,9 @@
     text-align: center;
     display: flex;
     justify-content: center;
+    background-color: #2231AA;
+}
+
+.img {
+    background-color: #2231AA;
 }

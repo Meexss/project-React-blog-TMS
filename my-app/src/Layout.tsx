@@ -1,14 +1,18 @@
-import React from 'react';
+import React, {FC} from 'react';
 import Header from "./Components/Header/Header";
 import Title from "./Components/UI/title/Title";
 import Tabs from "./Components/Tabs/Tabs";
 import Footer from "./Components/Footer/Footer";
 import {Outlet} from "react-router-dom";
 
-const Layout = () => {
+interface Props {
+    sign: boolean,
+}
+
+const Layout: FC<Props> = (props) => {
     return (
         <div className="App">
-            <Header />
+            <Header sign={props.sign}/>
             <div className="wrapper">
                 <Outlet/>
                 <Footer/>

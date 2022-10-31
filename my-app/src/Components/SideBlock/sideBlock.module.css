@@ -6,7 +6,7 @@
     position: absolute;
     top: 84px;
     left: 0;
-    animation: animate 2s linear;
+    animation: animate 0.7s linear;
     border: 1px solid #E5E5E5;
 }
 

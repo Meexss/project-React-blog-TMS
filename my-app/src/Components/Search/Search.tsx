@@ -8,7 +8,7 @@ const Search = ({...props}) => {
 
     return (
         <div {...props} className={classes.search__wrapper }>
-            {<img src='/search 1.png' alt={'search'}/>}
+            {<img className={classes.img} src='/search 1.png' alt={'search'}/>}
         </div>
     );
 };
