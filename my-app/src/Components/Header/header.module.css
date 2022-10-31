@@ -5,6 +5,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 72px;
+    position: relative;
 }
 
 .right__wrapper {
@@ -14,6 +15,57 @@
 .link {
     text-decoration: none;
     cursor: pointer;
-
 }
 
+.icon {
+    width: 85px;
+    height: 84px;
+    border-right: 1px solid #5360CD;
+    border-left: 1px solid #5360CD;
+    align-items: center;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    background-color: #2231AA;
+}
+
+.img {
+    background-color: #2231AA;
+}
+
+.btn {
+    background-color: #E8E8E8;
+    color: #313037;
+}
+
+.image_team {
+    width: 117px;
+    height: 83px;
+    border-top: 1px solid #E8E8E8;
+    background-color: white;
+    padding: 28px 46px;
+}
+
+.image_team_next {
+    width: 117px;
+    height: 83px;
+    border-top: 1px solid #E8E8E8;
+    background-color: white;
+    border-left: 1px solid #E8E8E8;
+    padding: 28px 46px;
+}
+
+.wrapper_image {
+    display: flex;
+    cursor: pointer;
+}
+
+.image_icon {
+    background-color: white;
+}
+
+.lowBlock {
+    position: absolute;
+    bottom: 0;
+}
