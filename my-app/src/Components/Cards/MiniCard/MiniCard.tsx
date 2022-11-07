@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 interface ItemBig {
     post: Items,
     islike: (click: Items) => void
+    like: Items[];
 }
 
 const MiniCard: FC<ItemBig> = (props) => {
@@ -28,7 +29,7 @@ const MiniCard: FC<ItemBig> = (props) => {
                 <img className={classes.photo} src={props.post.image}/>
                 </Link>
                 <div className={classes.more}>
-                    <img onClick={() => props.islike(props.post)} className={classes.favorite} src="./Bookmark.png"/>
+                    {props.like.find(item => item.id === props.post.id) ? <img className={classes.favorite} src="./Icon-Bookmark-dark.png"/> : <img onClick={() => props.islike(props.post) } className={classes.favorite} src="./Bookmark.png"/>}
                     <img className={classes.correct} src='./More-Horizontal.png'/>
                 </div>
             </div>

@@ -11,35 +11,18 @@ interface superlike {
     data: (post: Items[]) => void
 }
 
-
-
-
-
-
 const Tabs:FC<superlike> = (props) => {
-    const [data, setData] = useState<like[]>([]);
-    useEffect(() => {
-        fetch('https://studapi.teachmeskills.by/blog/posts/?lesson_num=50&limit=20')
-            .then(response => response.json())
-            .then(data => setData(data.results))
-    },[])
-
-    {data && props.data(data)}
-
     const [like, setLike] = useState<like[]>([])
 
-    console.log(like)
     function islike(click: like): void {
-      like.length !== 0 ? setLike([...like, click]) : setLike([click])
-
+       setLike([...like, click])
     }
 
     const items = [
-        { title: 'All', content: <TabContent islike={islike} /> },
+        { title: 'All', content: <TabContent islike={islike} like={like}/> },
         { title: 'My favorite', content: <LikeTab like={like} islike={islike}/> },
-        { title: 'Popular', content: <PopularTab islike={islike}/> },
+        { title: 'Popular', content: <PopularTab islike={islike} like={like}/> },
     ];
-//https://jsfiddle.net/0dhaojze/
         const [ active, setActive ] = useState<any>(0);
 
         return (

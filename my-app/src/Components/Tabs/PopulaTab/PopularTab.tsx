@@ -6,6 +6,7 @@ import MidleCard from "../../Cards/MidleCard/MidleCard";
 
 interface Funct {
     islike: (click: Items) => void,
+    like: Items[];
 }
 
 const PopularTab: FC<Funct> = (props) => {
@@ -13,7 +14,7 @@ const PopularTab: FC<Funct> = (props) => {
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
     useEffect(() => {
-        fetch('https://studapi.teachmeskills.by/blog/posts/?lesson_num=50&limit=12')
+        fetch('https://studapi.teachmeskills.by/blog/posts/?limit=200')
             .then(response => response.json())
             .then(data => setContent(data.results))
             .then(isDone => setIsLoading(true))
@@ -22,9 +23,7 @@ const PopularTab: FC<Funct> = (props) => {
     return (
         <div className={classes.wrapper}>
             {content.map((post, index) =>
-                <div key={post.id} className={classes.midleCard}>
-                    {index ? <MidleCard  post={post} islike={props.islike}/> : ''}
-                </div>
+                   index % 2 ? <div key={post.id} className={classes.midleCard}> <MidleCard  post={post} islike={props.islike} like={props.like}/> </div> : ''
             )}
         </div>
     );

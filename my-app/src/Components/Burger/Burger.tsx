@@ -17,8 +17,11 @@ const Burger: FC<Props> = ({children}) => {
 
     return (
         <div onClick={isClicked} className={  classes.burger__wrapper }>
-            <span className={click ? classes.burger__active : classes.burger}></span>
-            <SideBlock click={click}>{children}</SideBlock>
+            {/*<div onClick={(e) => e.stopPropagation()}>*/}
+                <span className={click ? classes.burger__active : classes.burger}></span>
+                <SideBlock click={click}>{children}</SideBlock>
+            {/*</div>*/}
+
         </div>
     );
 };

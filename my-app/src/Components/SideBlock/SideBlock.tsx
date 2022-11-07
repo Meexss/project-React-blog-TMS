@@ -10,6 +10,7 @@ const SideBlock: FC<props> = ({children, click}) => {
     return (
         <div className={click ? classes.burger__module : classes.close__module}>
             {children}
+
         </div>
     );
 };

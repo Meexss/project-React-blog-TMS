@@ -6,6 +6,7 @@ import {Link, Route} from "react-router-dom";
 interface ItemBig {
     post: Items,
     islike: (click: Items) => void
+    like: Items[];
 }
 
 
@@ -25,7 +26,7 @@ const MidleCard: FC<ItemBig> = (props) => {
                     <span></span>
                 </div>
                 <div>
-                    <img onClick={() => props.islike(props.post)} className={classes.favorite} src="./Bookmark.png"/>
+                    {props.like.find(item => item.id === props.post.id) ? <img className={classes.favorite} src="./Icon-Bookmark-dark.png"/> : <img onClick={() => props.islike(props.post) } className={classes.favorite} src="./Bookmark.png"/>}
                     <img className={classes.more} src='./More-Horizontal.png'/>
                 </div>
             </div>

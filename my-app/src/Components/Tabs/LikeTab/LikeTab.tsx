@@ -14,9 +14,7 @@ const LikeTab: FC<ArryLike> = (props) => {
         <div>
             <div className={classes.wrapper}>
                 {props.like.map((post, index) =>
-                    <div className={classes.midleCard}>
-                        {index / 2 ? <MidleCard key={post.id} post={post} islike={props.islike}/> : ''}
-                    </div>
+                       index ? <div key={post.id} className={classes.midleCard}> <MidleCard post={post} islike={props.islike} like={props.like}/>  </div> : ''
                 )}
             </div>
         </div>
