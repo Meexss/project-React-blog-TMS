@@ -17,6 +17,7 @@ export interface Items {
 
 interface Funct {
     islike: (click: Items) => void,
+    like: Items[];
 }
 
 const TabContent: FC<Funct> = (props) => {
@@ -34,17 +35,17 @@ const TabContent: FC<Funct> = (props) => {
 
         <div className={classes.wrapper}>
             <div className={classes.bigBlock}>
-                {isLoading && <BigCard content={content} islike={props.islike}/>  }
+                {isLoading && <BigCard content={content} islike={props.islike} like={props.like}/>  }
                 {content.map((post, index) =>
                     <div key={post.id} className={classes.midleCard}>
-                    {index < 4 ? <MidleCard key={post.id} post={post} islike={props.islike}/> : ''}
+                    {index < 4 ? <MidleCard post={post} islike={props.islike} like={props.like}/> : ''}
                     </div>
                 )}
             </div>
             <div>
                 {content.map((post, index) =>
                             <div key={post.id} className={classes.miniBlock}>
-                                {index >= 4 ? <MiniCard key={post.id} post={post} islike={props.islike}/> : ""}
+                                {index >= 4 ? <MiniCard post={post} islike={props.islike} like={props.like}/> : ""}
                             </div>
                     )}
             </div>

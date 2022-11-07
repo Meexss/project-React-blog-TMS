@@ -86,4 +86,8 @@
     text-decoration: none;
 }
 
+.title:hover {
+    color: #2231AA;
+}
+
 
